@@ -11,4 +11,4 @@ This package includes a MATLAB example, the mex-function, and the source code of
 
 More information can be found [here](https://www.audiolabs-erlangen.de/fau/professor/habets/software/signal-generator).
 
-[1] J.B. Allen and D.A. Berkley Image method for efficiently simulating small-room Acoustics Journal Acoustic Society of America, 65(4), April 1979, p 943.
+[1] J.B. Allen and D.A. Berkley, "Image method for efficiently simulating small-room acoustics," Journal Acoustic Society of America, 65(4), April 1979, p 943.
