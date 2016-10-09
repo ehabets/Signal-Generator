@@ -1,8 +1,8 @@
 # Signal-Generator
 
-The signal generator is a mex-function for MATLAB that can be used to generated the response of a moving sound source and receiver in a reverberant environment. 
+The signal generator is a mex-function for MATLAB that can be used to generate the response of a moving sound source and receiver in a reverberant environment. 
 The user can specify the position of the source and the receiver at each discrete time instance. 
-The generated output signal is computed by convolving the (anechoic) source signal with the time-varying room impulse response. 
+The output signal is computed by convolving the (anechoic) source signal with the time-varying room impulse response. 
 Multiple receiver positions can be specified to generate multiple responses simultaneously. 
 The room impulse responses are generated using the image method, proposed by Allen and Berkley in 1979 [1]. 
 The user can control the reverberation time (or reflection coefficients), reflection order, room dimension and microphone directivity in a way similar to the RIR generator. 
