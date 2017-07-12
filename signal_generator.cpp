@@ -5,7 +5,7 @@
  *
  * Author      : E.A.P. Habets (ehabets@dereverberation.org)
  *
- * Version     : 1.5.20110914
+ * Version     : 1.5.20170712
  *
  * History     : 1.0.20080130 Initial version
  *               1.0.20080209 Added myPrintf
@@ -15,6 +15,7 @@
  *               1.4.20100920 Now uses RIR Generator version 2.0.20100920
  *               1.5.20110914 Bug fixes and added support for
  *                            time-varying receiver positions
+ *               1.5.20170712 Changed delete to delete[]
  *
  * Special thanks go to Mr. Adham Al-Husseiny Mostafa for his contributions
  * to version 1.5.20110914.
@@ -170,7 +171,7 @@ void hpf_imp(double* imp, int row_idx, int nsamples, hpf_t hpf) {
         imp[row_idx + nsamples*idx] = Y[0] + hpf.A1*Y[1] + hpf.R1*Y[2];
     }
     
-    delete Y;
+    delete[] Y;
 }
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
@@ -184,12 +185,12 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
                 "|                                                                  |\n"
                 "| Author    : Emanuel Habets (ehabets@dereverberation.org)         |\n"
                 "|                                                                  |\n"
-                "| Version   : 1.5.20110914                                         |\n"
+                "| Version   : 1.5.20170712                                         |\n"
                 "|                                                                  |\n"
                 "| Special thanks go to Mr. Adham Al-Husseiny Mostafa for his       |\n"
                 "| contributions to version 1.5.20110914.                           |\n"
                 "|                                                                  |\n"
-                "| Copyright (C) 2008-2011, E.A.P. Habets                           |\n"
+                "| Copyright (C) 2008-2017, E.A.P. Habets                           |\n"
                 "--------------------------------------------------------------------\n\n"
                 "function [out, beta_hat] = signal_generator(in, c, fs, r_path, s_path, L, beta,\n"
                 " nsamples, mtype, order, dim, orientation, hp_filter);\n\n"
@@ -230,8 +231,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         return;
     }
     else {
-        myPrintf("Signal Generator (Version 1.5.20110914) by Emanuel Habets\n"
-                "Copyright (C) 2008-2011 E.A.P. Habets.\n");
+        myPrintf("Signal Generator (Version 1.5.20170712) by Emanuel Habets\n"
+                "Copyright (C) 2008-2017 E.A.P. Habets.\n");
         
         // Start progress bar
         mexEvalString("waitbar_handle = waitbar(0,'Generate sensor signals...');");
@@ -617,15 +618,15 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
     // Close progress bar
     mexEvalString("close(waitbar_handle);");
     
-    delete beta;
-    delete mtype;
-    delete angle;
-    delete angles;
-    delete hanning_window;
-    delete LPI;
-    delete r;
-    delete s;
-    delete L;
-    delete n;
+    delete[] beta;
+    delete[] mtype;
+    delete[] angle;
+    delete[] angles;
+    delete[] hanning_window;
+    delete[] LPI;
+    delete[] r;
+    delete[] s;
+    delete[] L;
+    delete[] n;
     mxDestroyArray(imp_mtx);
 }

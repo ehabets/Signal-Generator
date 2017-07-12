@@ -29,7 +29,7 @@ sp = [2.5 0.5 3];                % Initial source position
 type_of_movement = 'line';       % Source movement 'arc' or 'line'
 
 %% Load anechoic sound source
-[in, fs] = wavread('female_speech.wav');
+[in, fs] = audioread('female_speech.wav');
 if size(in,1) > size(in,2)
     in = in';
 end

@@ -32,7 +32,7 @@ stop_x = 2.5;
 stop_y = 4.98;
 
 %% Load anechoic sound source
-[in, fs] = wavread('female_speech.wav');
+[in, fs] = audioread('female_speech.wav');
 %fs = 8000; in = randn(1,4*fs);
 if size(in,1) > size(in,2)
     in = in';
