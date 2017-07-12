@@ -238,8 +238,8 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]) {
         mexEvalString("waitbar_handle = waitbar(0,'Generate sensor signals...');");
     }
     
-    const int  dim_array_size = mxGetNumberOfDimensions(prhs[3]);
-    const int* dim_array      = mxGetDimensions(prhs[3]);
+    const mwSize  dim_array_size = mxGetNumberOfDimensions(prhs[3]);
+    const mwSize* dim_array      = mxGetDimensions(prhs[3]);
     
     // Check for proper number of arguments
     if (nrhs < 7)
